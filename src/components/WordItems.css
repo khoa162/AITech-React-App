@@ -1,0 +1,15 @@
+.word-cell {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  min-width: 120px;
+  user-select: none;
+  font-size: 15px;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.word-cell:hover {
+  background-color: #f5faff;
+}

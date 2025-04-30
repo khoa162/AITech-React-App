@@ -1,0 +1,16 @@
+.word-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.word-table th {
+    background-color: #cce5ff;
+    color: #003366;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
