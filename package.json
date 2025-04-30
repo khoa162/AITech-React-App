@@ -1,5 +1,5 @@
 {
-  "name": "vite-word-memory-ts",
+  "name": "word-memory",
   "version": "1.0.0",
   "private": true,
   "scripts": {

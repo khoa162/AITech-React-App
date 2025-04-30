@@ -18,6 +18,7 @@ export default function App() {
   const [selectedRight, setSelectedRight] = useState<string | null>(null);
   const [matchedPairs, setMatchedPairs] = useState<{ left: string; right: string }[]>([]);
   const [score, setScore] = useState<number | null>(null);
+  const [gradeButtonColor, setGradeButtonColor] = useState<string>('');
 
   const handleGo = () => {
     setLeftWords(shuffleArray(englishWords));
@@ -28,6 +29,7 @@ export default function App() {
     setScore(null);
     setButtonLabel('GRADE');
     setGameStarted(true);
+    setGradeButtonColor('#93bf85');
   };
 
   const handleGrade = () => {
@@ -67,8 +69,8 @@ export default function App() {
 
   return (
     <div  className="app-container">
-      <h1>French Memory Game</h1>
-      <button onClick={buttonLabel === 'GO' ? handleGo : handleGrade}>{buttonLabel}</button>
+      <h1>Word Memory</h1>
+      <button onClick={buttonLabel === 'GO' ? handleGo : handleGrade } style={{ backgroundColor: gradeButtonColor }}>{buttonLabel}</button>
       {score !== null && <h2>Your Score: {score}%</h2>}
 
       {gameStarted && (
