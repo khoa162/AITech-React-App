@@ -2,13 +2,7 @@ import React from 'react';
 import { ArcherElement } from 'react-archer';
 import './WordItems.css';
 
-// type RelationType = {
-//     targetId: string;
-//     targetAnchor?: 'left' | 'right' | 'top' | 'bottom';
-//     sourceAnchor?: 'left' | 'right' | 'top' | 'bottom';
-//     style?: React.CSSProperties;
-//     label?: string | React.ReactNode;
-//   };
+import { Colors } from '../../Colors';
   
 interface Props {
   id: string;
@@ -17,13 +11,13 @@ interface Props {
   isMatched: boolean;
   onClick: () => void;
   relations?: any,
-  backgroundColor: string
+  backgroundColor?: string
 }
 
 export default function WordItem({ id, word, isSelected, isMatched, onClick, relations = [], backgroundColor }: Props) {
   const getBackground = () => {
-    if (isMatched) return '#ddd';
-    if (isSelected) return '#add8e6';
+    if (isMatched) return Colors.LightGray;
+    if (isSelected) return Colors.LightBlue;
     return backgroundColor;
   };
 

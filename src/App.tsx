@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import WordColumn from './components/WordColumn';
+import WordColumn from './components/WordColumn/WordColumn';
 import { ArcherContainer } from 'react-archer';
 import { englishWords, frenchWords, correctPairs } from './data';
 
 import './App.css';
+import { Colors } from './Colors';
 
 function shuffleArray<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5);
@@ -29,7 +30,7 @@ export default function App() {
     setScore(null);
     setButtonLabel('GRADE');
     setGameStarted(true);
-    setGradeButtonColor('#93bf85');
+    setGradeButtonColor(Colors.SageGreen);
   };
 
   const handleGrade = () => {
@@ -69,10 +70,11 @@ export default function App() {
 
   return (
     <div  className="app-container">
-      <h1>Word Memory</h1>
-      <button onClick={buttonLabel === 'GO' ? handleGo : handleGrade } style={{ backgroundColor: gradeButtonColor }}>{buttonLabel}</button>
-      {score !== null && <h2>Your Score: {score}%</h2>}
-
+      <div className='title'>
+        <h1>Word Memory</h1>
+        <button onClick={buttonLabel === 'GO' ? handleGo : handleGrade } style={{ backgroundColor: gradeButtonColor }}>{buttonLabel}</button>
+        {score !== null && <h2>Your Score: {score}%</h2>}
+      </div>
       {gameStarted && (
         <ArcherContainer strokeColor="blue">
           <div className="layout-grid">
@@ -91,7 +93,7 @@ export default function App() {
                 matchedPairs={matchedPairs}
                 columnType="right"
                 onWordClick={handleWordClick}
-                titleColor='#93bf85'
+                titleColor={Colors.SageGreen}
               />
             </div>
           </ArcherContainer>

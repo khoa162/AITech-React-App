@@ -1,6 +1,8 @@
 import React, { JSX } from 'react';
-import WordItem from './WordItems';
+import WordItem from '../WordItems/WordItems';
+
 import './WordColumn.css';
+import { Colors } from '../../Colors';
 
 type CustomRelation = {
   targetId: string;
@@ -48,8 +50,7 @@ export default function WordColumn({
           : [];
 
       const id = `${columnType}-${word}`;
-      const rowBackgroundColor = (!(rowNumber % 2) && title == 'English Words') ? '#dee9f7' : (!(rowNumber % 2) && title == 'French Words') ? '#dbead5' : 'white'
-      console.log("title ", title)
+      const rowBackgroundColor = (!(rowNumber % 2) && title == 'English Words') ? Colors.PaleBlue : (!(rowNumber % 2) && title == 'French Words') ? Colors.PaleGreen : 'white'
 
       return (
         <tr key={word}>
